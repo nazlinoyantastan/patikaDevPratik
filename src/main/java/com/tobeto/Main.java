@@ -7,7 +7,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
        // notOrtalamasi();
-        kdvTutari();
+       // kdvTutari();
+        //alanHesabi();
+        //taksimetre();
+        kitleIndeksi();
     }
 
     private static void notOrtalamasi() {
@@ -51,4 +54,55 @@ public class Main {
 
 
     }
+
+    private static void alanHesabi (){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("sırayla iç kenar uzunluğu giriniz : ");
+        double a = scanner.nextDouble();
+        double b = scanner.nextDouble();
+        double c = scanner.nextDouble();
+
+        // Üçgenin çevresini hesapla
+        double u = (a + b + c) / 2;
+
+        // Alanı hesapla
+        double alan = Math.sqrt(u * (u - a) * (u - b) * (u - c));
+        System.out.println("Üçgenin alanı: " + alan);
+
+    }
+
+    private static void taksimetre(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Gidilen km giriniz : ");
+        int km = scanner.nextInt();
+
+        double kmUcreti = 2.2;
+        int acilis = 10;
+
+        double tutar = km*kmUcreti + acilis;
+
+        double odeme = (tutar <= 20) ? 20 : tutar;
+
+        System.out.println("Borcunuz : " + odeme);
+
+
+    }
+
+    private static void kitleIndeksi (){
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Lütfen boyunuzu (metre cinsinde) giriniz : ");
+        double boy = input.nextDouble();
+
+        System.out.println("Lütfen kilonuzu giriniz : ");
+        double kilo = input.nextDouble();
+
+        double kitle = kilo / (boy * boy);
+
+        System.out.println("Vücut kitle indeksiniz : " + kitle);
+
+    }
+
+
 }
